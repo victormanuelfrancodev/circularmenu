@@ -26,7 +26,6 @@ class OrbitMenu {
     List<Point> points = getCircularPosition(numberOfElements, adjustedRadius, animationOffset);
     List<Widget> menuWidgets = [];
 
-
     menuWidgets.add(
       Positioned(
           left: menuPositionX - radius,
