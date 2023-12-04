@@ -1,4 +1,4 @@
-# CircularMenu Flutter Package 
+# CircularMenu Flutter Package
 
 ## Description
 
@@ -36,22 +36,22 @@ import 'package:circularmenu/circularmenu.dart';
 Use the CircularMenu class to create the menu:
 
 ```dart 
-    CircularMenu.createMenu( 
-      menuPositionX: 100,  // X position of the menu
-      menuPositionY: 100,  // Y position of the menu
-      menuColor: Colors.blue,  // Color of the central circle
-      radius: 60,  // Radius of the central circle
-      menuItems: [  // Menu items
-        Item(title: 'Home', onPressed: () {}),
-        // ... more items ...
-      ],
-      itemSize: 20,  // Size of the item circles
-      itemColor: Colors.white,  // Color of the item circles
-      itemBorderColor: Colors.black,  // Border color of the item circles
-      borderCentralMenuColor: Colors.black,  // Border color of the central circle
-      animationOffset: 500,  // Animation offset
-      itemOffsetPercentage: 0.1,  // Item offset percentage
-    )
+    CircularMenu.createMenu(
+menuPositionX: 100,  // X position of the menu
+menuPositionY: 100,  // Y position of the menu
+menuColor: Colors.blue,  // Color of the central circle
+radius: 60,  // Radius of the central circle
+menuItems: [  // Menu items
+Item(title: 'Home', onPressed: () {}),
+// ... more items ...
+],
+itemSize: 20,  // Size of the item circles
+itemColor: Colors.white,  // Color of the item circles
+itemBorderColor: Colors.black,  // Border color of the item circles
+borderCentralMenuColor: Colors.black,  // Border color of the central circle
+animationOffset: 500,  // Animation offset
+itemOffsetPercentage: 0.1,  // Item offset percentage
+)
 ```
 ### Contributions to this package are welcome.
 

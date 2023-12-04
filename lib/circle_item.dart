@@ -39,7 +39,7 @@ class CircleItem extends StatelessWidget {
               this.imageName!,
               fit: BoxFit.cover,
             )
-                : Container(child: Center(child: Text(title != null ? title! : ""),),)
+                : Center(child: Text(title != null ? title! : ""),)
         ),
       ),
     );

@@ -1,39 +1,58 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# CircularMenu Flutter Package
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+## Description
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+CircularMenu is a Flutter package designed for creating interactive and visually appealing circular menus in mobile applications. It features a large central circle surrounded by smaller circles that function as buttons. This package enables Flutter developers to incorporate intuitive and aesthetically pleasing navigation in their apps.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Circular menu with a large central circle.
+- Smaller circles around the central circle acting as buttons.
+- Full customization of colors, sizes, and behaviors.
+- Ability to adjust the distance of the smaller circles from the central circle.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use CircularMenu in your Flutter project, add the following dependency to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  circularmenu: ^latest_version
+```
+
+Then, run flutter pub get to install the package.
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To implement the circular menu in your Flutter app, follow these steps:
+
+Import CircularMenu in your Dart file:
 
 ```dart
-const like = 'sample';
+import 'package:circularmenu/circularmenu.dart';
 ```
 
-## Additional information
+Use the CircularMenu class to create the menu:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart 
+    CircularMenu.createMenu(
+menuPositionX: 100,  // X position of the menu
+menuPositionY: 100,  // Y position of the menu
+menuColor: Colors.blue,  // Color of the central circle
+radius: 60,  // Radius of the central circle
+menuItems: [  // Menu items
+Item(title: 'Home', onPressed: () {}),
+// ... more items ...
+],
+itemSize: 20,  // Size of the item circles
+itemColor: Colors.white,  // Color of the item circles
+itemBorderColor: Colors.black,  // Border color of the item circles
+borderCentralMenuColor: Colors.black,  // Border color of the central circle
+animationOffset: 500,  // Animation offset
+itemOffsetPercentage: 0.1,  // Item offset percentage
+)
+```
+### Contributions to this package are welcome.
+
+If you find a bug or have a suggestion, please open an issue or a pull request.

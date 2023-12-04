@@ -6,12 +6,13 @@ import 'dart:math';
 ///
 ///  1 round = 360° = 2π rad
 
-List<Point> getCircularPosition(int numberOfElements, double radius, double _scrollY){
+List<Point> getCircularPosition(int numberOfElements, double radius,
+    double scrollY){
 
   List<Point> points = [];
 
   for(var i = 0; i < numberOfElements; i++) {
-    var angle = _scrollY + (i *2 * pi) / numberOfElements;
+    var angle = scrollY + (i *2 * pi) / numberOfElements;
     var x = radius * cos(angle );
     var y = radius * sin(angle );
 
