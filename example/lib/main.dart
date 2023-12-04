@@ -32,7 +32,7 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     final heightSize =  MediaQuery.of(context).size.height;
     final widthSize =  MediaQuery.of(context).size.width;
-    int numberOfItems = 10;
+    int numberOfItems = 5;
     List<Item> itemList = List.generate(numberOfItems, (i) =>
         Item(title: (i + 1).toString(), onPressed: () { print('touch $i'); }, image: ''));
 
@@ -41,14 +41,14 @@ class Menu extends StatelessWidget {
           menuPositionX: widthSize / 2,
           menuPositionY: heightSize / 2,
           menuColor: Colors.black,
-          radius: 100,
+          borderCentralMenuColor: Colors.white,
+          radius: 150,
           menuItems: itemList,
-          itemBorderColor: Colors.pink,
+          itemBorderColor: Colors.transparent,
           itemSize: 50,
-          itemColor: Colors.blue,
-          borderCentralMenuColor: Colors.pink,
+          itemColor: Colors.red,
           animationOffset: 500,
-          itemOffsetPercentage: 0.5,
+          itemOffsetPercentage: 0.0,
         )
     );
   }
