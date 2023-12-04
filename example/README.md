@@ -1,16 +1,58 @@
-# example
+# CircularMenu Flutter Package 
 
-A new Flutter project.
+## Description
 
-## Getting Started
+CircularMenu is a Flutter package designed for creating interactive and visually appealing circular menus in mobile applications. It features a large central circle surrounded by smaller circles that function as buttons. This package enables Flutter developers to incorporate intuitive and aesthetically pleasing navigation in their apps.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Circular menu with a large central circle.
+- Smaller circles around the central circle acting as buttons.
+- Full customization of colors, sizes, and behaviors.
+- Ability to adjust the distance of the smaller circles from the central circle.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To use CircularMenu in your Flutter project, add the following dependency to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  circularmenu: ^latest_version
+```
+
+Then, run flutter pub get to install the package.
+
+
+## Usage
+
+To implement the circular menu in your Flutter app, follow these steps:
+
+Import CircularMenu in your Dart file:
+
+```dart
+import 'package:circularmenu/circularmenu.dart';
+```
+
+Use the CircularMenu class to create the menu:
+
+```dart 
+    CircularMenu.createMenu( 
+      menuPositionX: 100,  // X position of the menu
+      menuPositionY: 100,  // Y position of the menu
+      menuColor: Colors.blue,  // Color of the central circle
+      radius: 60,  // Radius of the central circle
+      menuItems: [  // Menu items
+        Item(title: 'Home', onPressed: () {}),
+        // ... more items ...
+      ],
+      itemSize: 20,  // Size of the item circles
+      itemColor: Colors.white,  // Color of the item circles
+      itemBorderColor: Colors.black,  // Border color of the item circles
+      borderCentralMenuColor: Colors.black,  // Border color of the central circle
+      animationOffset: 500,  // Animation offset
+      itemOffsetPercentage: 0.1,  // Item offset percentage
+    )
+```
+### Contributions to this package are welcome.
+
+If you find a bug or have a suggestion, please open an issue or a pull request.

@@ -8,7 +8,7 @@ import 'item.dart';
 import 'maths.dart';
 
 class CircularMenu {
-  static List<Widget> getMenuItems({
+  static List<Widget> createMenu({
     required double menuPositionX,
     required double menuPositionY,
     required Color menuColor,
