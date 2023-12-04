@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'orbit_menu_config.dart';
+import 'OrbitMenu.dart';
+import 'orbit_menu_animation_type.dart';
+import 'dart:math';
 
 class AnimatedOrbitMenu extends StatefulWidget {
   final bool animate;
@@ -18,9 +22,18 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu> with SingleTicker
   void initState() {
     super.initState();
     if (widget.animate) {
-      _controller = AnimationController(vsync: this, duration: Duration(seconds: 12));
-      _animation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn));
-      _controller.repeat(reverse: true);
+      _controller = AnimationController(vsync: this, duration: widget.config.animationDuration);
+      switch (widget.config.animationType) {
+        case OrbitMenuAnimationType.rotating:
+          _animation = Tween<double>(begin: 0.0, end: 2 * pi).animate(_controller);
+          _controller.repeat();
+          break;
+        case OrbitMenuAnimationType.bouncing:
+          _animation = Tween<double>(begin: 0.0, end: 1.0).animate(
+              CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn));
+          _controller.repeat(reverse: true);
+          break;
+      }
     }
   }
 
@@ -37,6 +50,7 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu> with SingleTicker
             menuPositionY: widget.config.menuPositionY,
             menuColor: widget.config.menuColor,
             radius: widget.config.radius,
+            titleStyle: widget.config.titleStyle,
             menuItems: widget.config.menuItems,
             itemSize: widget.config.itemSize,
             itemColor: widget.config.itemColor,
@@ -51,12 +65,11 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu> with SingleTicker
         : Stack(
       alignment: Alignment.center,
       children: OrbitMenu.createMenu(
-        alignment: Alignment.center,
-        children: OrbitMenu.createMenu(
         menuPositionX: widget.config.menuPositionX,
         menuPositionY: widget.config.menuPositionY,
         menuColor: widget.config.menuColor,
         radius: widget.config.radius,
+        titleStyle: widget.config.titleStyle,
         menuItems: widget.config.menuItems,
         itemSize: widget.config.itemSize,
         itemColor: widget.config.itemColor,
@@ -64,8 +77,7 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu> with SingleTicker
         borderCentralMenuColor: widget.config.borderCentralMenuColor,
         animationOffset: 0,
         itemOffsetPercentage: widget.config.itemOffsetPercentage,
-      ),
-    );
+    ));
   }
 
   @override

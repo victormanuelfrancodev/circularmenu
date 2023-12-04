@@ -16,6 +16,7 @@ class OrbitMenu {
     required List<Item> menuItems,
     required double itemSize,
     required Color itemColor,
+    required TextStyle titleStyle,
     required Color itemBorderColor,
     required Color borderCentralMenuColor,
     required double animationOffset,
@@ -46,6 +47,7 @@ class OrbitMenu {
             child: CircleItem(
               size: itemSize,
               color: itemColor,
+              titleStyle: titleStyle,
               borderColor: itemBorderColor,
               borderWidth: 1,
               title: menuItems[i].title,

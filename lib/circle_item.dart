@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class CircleItem extends StatelessWidget {
   const CircleItem(
-      {required this.size,
+      { required this.size,
         required this.color,
+        this.titleStyle = const TextStyle(color: Colors.black),
         this.borderColor,
         this.borderWidth,
         this.title,
@@ -13,6 +14,7 @@ class CircleItem extends StatelessWidget {
 
   final double size;
   final Color color;
+  final TextStyle titleStyle;
   final String? title;
   final String? imageName;
   final VoidCallback onTap;
@@ -39,7 +41,7 @@ class CircleItem extends StatelessWidget {
               this.imageName!,
               fit: BoxFit.cover,
             )
-                : Center(child: Text(title != null ? title! : ""),)
+                : Center(child: Text(title != null ? title! : "", style: titleStyle,),)
         ),
       ),
     );

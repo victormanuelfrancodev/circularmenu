@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:orbitmenu/orbitmenu.dart';
 import 'package:orbitmenu/animated_orbit_menu.dart';
 import 'package:orbitmenu/item.dart';
+import 'package:orbitmenu/orbit_menu_config.dart';
+import 'package:orbitmenu/orbit_menu_animation_type.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,22 +38,23 @@ class Menu extends StatelessWidget {
     List<Item> itemList = List.generate(numberOfItems, (i) =>
         Item(title: (i + 1).toString(), onPressed: () { print('touch $i'); }, image: ''));
 
-    return Stack(
-        children: AnimatedOrbitMenu(
+    return AnimatedOrbitMenu(
           animate: true,
           config: OrbitMenuConfig(
+            animationDuration: Duration(seconds:5),
+            animationType: OrbitMenuAnimationType.bouncing,
             menuPositionX: widthSize / 2,
             menuPositionY: heightSize / 2,
             menuColor: Colors.deepPurple,
             radius: 100,
             menuItems: itemList,
+            titleStyle: TextStyle(color: Colors.white),
             itemSize: 50,
             itemColor: Colors.deepPurple,
             itemBorderColor: Colors.white,
             borderCentralMenuColor: Colors.white,
             itemOffsetPercentage: 0.5,
           ),
-        ),
-    );
+        );
   }
 }
