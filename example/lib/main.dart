@@ -1,6 +1,6 @@
-import 'package:circularmenu/circularmenu.dart';
-import 'package:circularmenu/item.dart';
 import 'package:flutter/material.dart';
+import 'package:orbitmenu/orbitmenu.dart';
+import 'package:orbitmenu/item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +37,7 @@ class Menu extends StatelessWidget {
         Item(title: (i + 1).toString(), onPressed: () { print('touch $i'); }, image: ''));
 
     return Stack(
-        children: CircularMenu.createMenu(
+        children: OrbitMenu.createMenu(
           menuPositionX: widthSize / 2,
           menuPositionY: heightSize / 2,
           menuColor: Colors.black,

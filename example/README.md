@@ -1,8 +1,8 @@
-# CircularMenu Flutter Package
+# OrbitMenu Flutter Package
 
 ## Description
 
-CircularMenu is a Flutter package designed for creating interactive and visually appealing circular menus in mobile applications. It features a large central circle surrounded by smaller circles that function as buttons. This package enables Flutter developers to incorporate intuitive and aesthetically pleasing navigation in their apps.
+OrbitMenu is a Flutter package designed for creating interactive and visually appealing circular menus in mobile applications. It features a large central circle surrounded by smaller circles that function as buttons. This package enables Flutter developers to incorporate intuitive and aesthetically pleasing navigation in their apps.
 
 ## Features
 
@@ -13,11 +13,11 @@ CircularMenu is a Flutter package designed for creating interactive and visually
 
 ## Installation
 
-To use CircularMenu in your Flutter project, add the following dependency to your `pubspec.yaml` file:
+To use OrbitMenu in your Flutter project, add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  circularmenu: ^latest_version
+  orbitmenu: ^latest_version
 ```
 
 Then, run flutter pub get to install the package.
@@ -27,16 +27,16 @@ Then, run flutter pub get to install the package.
 
 To implement the circular menu in your Flutter app, follow these steps:
 
-Import CircularMenu in your Dart file:
+Import OrbitMenu in your Dart file:
 
 ```dart
-import 'package:circularmenu/circularmenu.dart';
+import 'package:orbitmenu/orbitmenu.dart';
 ```
 
-Use the CircularMenu class to create the menu:
+Use the OrbitMenu class to create the menu:
 
 ```dart 
-    CircularMenu.createMenu(
+    OrbitMenu.createMenu(
 menuPositionX: 100,  // X position of the menu
 menuPositionY: 100,  // Y position of the menu
 menuColor: Colors.blue,  // Color of the central circle

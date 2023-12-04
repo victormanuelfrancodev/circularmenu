@@ -7,7 +7,7 @@ import 'circle_item.dart';
 import 'item.dart';
 import 'maths.dart';
 
-class CircularMenu {
+class OrbitMenu {
   static List<Widget> createMenu({
     required double menuPositionX,
     required double menuPositionY,
