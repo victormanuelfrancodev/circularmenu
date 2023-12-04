@@ -42,7 +42,7 @@ class Menu extends StatelessWidget {
           animate: true,
           config: OrbitMenuConfig(
             animationDuration: Duration(seconds:5),
-            animationType: OrbitMenuAnimationType.bouncing,
+            animationType: OrbitMenuAnimationType.rotating,
             menuPositionX: widthSize / 2,
             menuPositionY: heightSize / 2,
             menuColor: Colors.deepPurple,

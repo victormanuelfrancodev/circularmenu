@@ -9,3 +9,10 @@
 ## 0.0.3
 
 * Orbit Menu  - Readme updated.
+
+## 0.0.4
+
+* A central circle with smaller, customizable circular buttons around it.
+* Two animation styles: OrbitMenuAnimationType.bouncing and OrbitMenuAnimationType.rotating.
+* Full control over colors, sizes, and spacing.
+* Easy toggling of animation with a simple boolean.
