@@ -1,7 +1,7 @@
 name: circularmenu
 description: It's a simple circular menu
 version: 0.0.1
-homepage:
+homepage: https://github.com/victormanuelfrancodev/circularmenu
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
