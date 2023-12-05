@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orbitmenu/orbitmenu.dart';
 import 'orbit_menu_config.dart';
 import 'orbit_menu_animation_type.dart';
 import 'orbitmenu.dart';
@@ -8,7 +9,8 @@ class AnimatedOrbitMenu extends StatefulWidget {
   final bool animate;
   final OrbitMenuConfig config;
 
-  AnimatedOrbitMenu({Key? key, required this.animate, required this.config})
+  const AnimatedOrbitMenu(
+      {Key? key, required this.animate, required this.config})
       : super(key: key);
 
   @override

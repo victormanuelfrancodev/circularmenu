@@ -2,10 +2,10 @@ library circularmenu;
 
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'big_circle.dart';
-import 'circle_item.dart';
-import 'item.dart';
-import 'maths.dart';
+import 'package:orbitmenu/big_circle.dart';
+import 'package:orbitmenu/circle_item.dart';
+import 'package:orbitmenu/item.dart';
+import 'package:orbitmenu/maths.dart';
 
 class OrbitMenu {
   static List<Widget> createMenu(
