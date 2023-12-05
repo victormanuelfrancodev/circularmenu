@@ -64,9 +64,7 @@ To implement the circular menu in your Flutter app, follow these steps:
 Import and use AnimatedOrbitMenu in your Dart file:
 
 ```dart
-import 'package:orbitmenu/animated_orbit_menu.dart';
-import 'package:orbitmenu/orbit_menu_config.dart';
-import 'package:orbitmenu/orbit_menu_animation_type.dart';
+import 'package:orbitmenu/menu.dart';
 ```
 
 Use the AnimatedOrbitMenu class to create the menu:
