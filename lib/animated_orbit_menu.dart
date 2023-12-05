@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:orbitmenu/orbitmenu.dart';
 import 'orbit_menu_config.dart';
 import 'orbit_menu_animation_type.dart';
-import 'orbitmenu.dart';
 import 'dart:math';
 
 class AnimatedOrbitMenu extends StatefulWidget {

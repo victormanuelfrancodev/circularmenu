@@ -36,9 +36,9 @@ class CircleItem extends StatelessWidget {
           borderRadius: BorderRadius.circular((size) / 2),
         ),
         child: ClipOval(
-            child: this.imageName != null
+            child: imageName != null
                 ? Image.asset(
-                    this.imageName!,
+                    imageName!,
                     fit: BoxFit.cover,
                   )
                 : Center(
