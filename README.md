@@ -94,4 +94,4 @@ Use the AnimatedOrbitMenu class to create the menu:
 
 If you find a bug or have a suggestion, please open an issue or a pull request.
 
-For more information, please refer to our [CONTRIBUTING](CONTRIBUTING.md) 
+For more information, please refer to our [CONTRIBUTING](CONTRIBUTORS.md) 
