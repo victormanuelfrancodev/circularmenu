@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class BigCircle extends StatelessWidget {
   const BigCircle(
       {required this.size,
-        required this.color,
-        this.borderColor,
-        this.borderWidth,
-        super.key});
+      required this.color,
+      this.borderColor,
+      this.borderWidth,
+      super.key});
 
   final double size;
   final Color color;

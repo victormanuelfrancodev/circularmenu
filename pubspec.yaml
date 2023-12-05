@@ -1,6 +1,6 @@
 name: orbitmenu
 description: OrbitMenu is a versatile Flutter package for creating dynamic circular menus with interactive animations.
-version: 0.0.3
+version: 0.0.6
 homepage: https://github.com/victormanuelfrancodev/circularmenu
 
 environment:

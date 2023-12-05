@@ -1,5 +1,1 @@
-
-enum OrbitMenuAnimationType {
-  rotating,
-  bouncing
-}
+enum OrbitMenuAnimationType { rotating, bouncing }

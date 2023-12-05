@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-class Item{
+class Item {
   String image;
   VoidCallback onPressed;
   String title;

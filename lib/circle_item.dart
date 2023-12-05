@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class CircleItem extends StatelessWidget {
   const CircleItem(
-      { required this.size,
-        required this.color,
-        this.titleStyle = const TextStyle(color: Colors.black),
-        this.borderColor,
-        this.borderWidth,
-        this.title,
-        this.imageName,
-        required this.onTap,
-        super.key});
+      {required this.size,
+      required this.color,
+      this.titleStyle = const TextStyle(color: Colors.black),
+      this.borderColor,
+      this.borderWidth,
+      this.title,
+      this.imageName,
+      required this.onTap,
+      super.key});
 
   final double size;
   final Color color;
@@ -38,11 +38,15 @@ class CircleItem extends StatelessWidget {
         child: ClipOval(
             child: this.imageName != null
                 ? Image.asset(
-              this.imageName!,
-              fit: BoxFit.cover,
-            )
-                : Center(child: Text(title != null ? title! : "", style: titleStyle,),)
-        ),
+                    this.imageName!,
+                    fit: BoxFit.cover,
+                  )
+                : Center(
+                    child: Text(
+                      title != null ? title! : "",
+                      style: titleStyle,
+                    ),
+                  )),
       ),
     );
   }

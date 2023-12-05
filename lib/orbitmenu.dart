@@ -8,23 +8,23 @@ import 'item.dart';
 import 'maths.dart';
 
 class OrbitMenu {
-  static List<Widget> createMenu({
-    required double menuPositionX,
-    required double menuPositionY,
-    required Color menuColor,
-    required double radius,
-    required List<Item> menuItems,
-    required double itemSize,
-    required Color itemColor,
-    required TextStyle titleStyle,
-    required Color itemBorderColor,
-    required Color borderCentralMenuColor,
-    required double animationOffset,
-    double itemOffsetPercentage = 0.0
-  }) {
+  static List<Widget> createMenu(
+      {required double menuPositionX,
+      required double menuPositionY,
+      required Color menuColor,
+      required double radius,
+      required List<Item> menuItems,
+      required double itemSize,
+      required Color itemColor,
+      required TextStyle titleStyle,
+      required Color itemBorderColor,
+      required Color borderCentralMenuColor,
+      required double animationOffset,
+      double itemOffsetPercentage = 0.0}) {
     int numberOfElements = menuItems.length;
     double adjustedRadius = radius * (1 + itemOffsetPercentage);
-    List<Point> points = getCircularPosition(numberOfElements, adjustedRadius, animationOffset);
+    List<Point> points =
+        getCircularPosition(numberOfElements, adjustedRadius, animationOffset);
     List<Widget> menuWidgets = [];
 
     menuWidgets.add(
