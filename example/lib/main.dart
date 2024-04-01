@@ -48,12 +48,11 @@ class Menu extends StatelessWidget {
             menuColor: Colors.deepPurple,
             radius: 100,
             menuItems: itemList,
+            itemSize: 150,
             titleStyle: TextStyle(color: Colors.white),
-            itemSize: 50,
-            itemColor: Colors.deepPurple,
-            itemBorderColor: Colors.white,
             borderCentralMenuColor: Colors.white,
             itemOffsetPercentage: 0.5,
+            myWidget: Container(color: Colors.red,)
           ),
         );
   }

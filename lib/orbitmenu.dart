@@ -7,26 +7,29 @@ import 'package:orbitmenu/circle_item.dart';
 import 'package:orbitmenu/item.dart';
 import 'package:orbitmenu/maths.dart';
 
+/// A class to create a circular menu.
 class OrbitMenu {
-  static List<Widget> createMenu(
-      {required double menuPositionX,
-      required double menuPositionY,
-      required Color menuColor,
-      required double radius,
-      required List<Item> menuItems,
-      required double itemSize,
-      required Color itemColor,
-      required TextStyle titleStyle,
-      required Color itemBorderColor,
-      required Color borderCentralMenuColor,
-      required double animationOffset,
-      double itemOffsetPercentage = 0.0}) {
+  static List<Widget> createMenu({
+    required double menuPositionX,
+    required double menuPositionY,
+    required Color menuColor,
+    required double radius,
+    required List<Item> menuItems,
+    required double itemSize,
+    required Color itemColor,
+    required TextStyle titleStyle,
+    required Color itemBorderColor,
+    required Color borderCentralMenuColor,
+    required double animationOffset,
+    double itemOffsetPercentage = 0.0,
+    Widget? myWidget,
+  }) {
     int numberOfElements = menuItems.length;
     double adjustedRadius = radius * (1 + itemOffsetPercentage);
     List<Point> points =
         getCircularPosition(numberOfElements, adjustedRadius, animationOffset);
     List<Widget> menuWidgets = [];
-
+/// Add the central menu
     menuWidgets.add(
       Positioned(
           left: menuPositionX - radius,
@@ -38,21 +41,27 @@ class OrbitMenu {
             borderColor: borderCentralMenuColor,
           )),
     );
-
+/// Add the items
     for (int i = 0; i < numberOfElements; i++) {
       menuWidgets.add(
         Positioned(
             left: menuPositionX + points[i].x - (itemSize / 2),
             top: menuPositionY + points[i].y - (itemSize / 2),
-            child: CircleItem(
-              size: itemSize,
-              color: itemColor,
-              titleStyle: titleStyle,
-              borderColor: itemBorderColor,
-              borderWidth: 1,
-              title: menuItems[i].title,
-              onTap: menuItems[i].onPressed,
-            )),
+            child: myWidget != null
+                ? Container(
+                    width: itemSize,
+                    height: itemSize,
+                    child: myWidget,
+                  )
+                : CircleItem(
+                    size: itemSize,
+                    color: itemColor,
+                    titleStyle: titleStyle,
+                    borderColor: itemBorderColor,
+                    borderWidth: 1,
+                    title: menuItems[i].title,
+                    onTap: menuItems[i].onPressed,
+                  )),
       );
     }
     return menuWidgets;

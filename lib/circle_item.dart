@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// A circle item widget.
 class CircleItem extends StatelessWidget {
   const CircleItem(
       {required this.size,

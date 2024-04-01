@@ -21,6 +21,7 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu>
   late AnimationController _controller;
   late Animation<double> _animation;
 
+  /// Initialize the animation controller and animation
   @override
   void initState() {
     super.initState();
@@ -43,6 +44,7 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu>
     }
   }
 
+  /// Build the widget with the animation
   @override
   Widget build(BuildContext context) {
     return widget.animate
@@ -52,40 +54,42 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu>
               return Stack(
                 alignment: Alignment.center,
                 children: OrbitMenu.createMenu(
-                  menuPositionX: widget.config.menuPositionX,
-                  menuPositionY: widget.config.menuPositionY,
-                  menuColor: widget.config.menuColor,
-                  radius: widget.config.radius,
-                  titleStyle: widget.config.titleStyle,
-                  menuItems: widget.config.menuItems,
-                  itemSize: widget.config.itemSize,
-                  itemColor: widget.config.itemColor,
-                  itemBorderColor: widget.config.itemBorderColor,
-                  borderCentralMenuColor: widget.config.borderCentralMenuColor,
-                  animationOffset: _animation.value,
-                  itemOffsetPercentage: widget.config.itemOffsetPercentage,
-                ),
+                    menuPositionX: widget.config.menuPositionX,
+                    menuPositionY: widget.config.menuPositionY,
+                    menuColor: widget.config.menuColor,
+                    radius: widget.config.radius,
+                    titleStyle: widget.config.titleStyle,
+                    menuItems: widget.config.menuItems,
+                    itemSize: widget.config.itemSize,
+                    itemColor: widget.config.itemColor,
+                    itemBorderColor: widget.config.itemBorderColor,
+                    borderCentralMenuColor:
+                        widget.config.borderCentralMenuColor,
+                    animationOffset: _animation.value,
+                    itemOffsetPercentage: widget.config.itemOffsetPercentage,
+                    myWidget: widget.config.myWidget),
               );
             },
           )
         : Stack(
             alignment: Alignment.center,
             children: OrbitMenu.createMenu(
-              menuPositionX: widget.config.menuPositionX,
-              menuPositionY: widget.config.menuPositionY,
-              menuColor: widget.config.menuColor,
-              radius: widget.config.radius,
-              titleStyle: widget.config.titleStyle,
-              menuItems: widget.config.menuItems,
-              itemSize: widget.config.itemSize,
-              itemColor: widget.config.itemColor,
-              itemBorderColor: widget.config.itemBorderColor,
-              borderCentralMenuColor: widget.config.borderCentralMenuColor,
-              animationOffset: 0,
-              itemOffsetPercentage: widget.config.itemOffsetPercentage,
-            ));
+                menuPositionX: widget.config.menuPositionX,
+                menuPositionY: widget.config.menuPositionY,
+                menuColor: widget.config.menuColor,
+                radius: widget.config.radius,
+                titleStyle: widget.config.titleStyle,
+                menuItems: widget.config.menuItems,
+                itemSize: widget.config.itemSize,
+                itemColor: widget.config.itemColor,
+                itemBorderColor: widget.config.itemBorderColor,
+                borderCentralMenuColor: widget.config.borderCentralMenuColor,
+                animationOffset: 0,
+                itemOffsetPercentage: widget.config.itemOffsetPercentage,
+                myWidget: widget.config.myWidget));
   }
 
+  /// Dispose the controller
   @override
   void dispose() {
     if (widget.animate) {

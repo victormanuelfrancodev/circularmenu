@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// A big circle widget.
 class BigCircle extends StatelessWidget {
   const BigCircle(
       {required this.size,

@@ -92,6 +92,44 @@ Use the AnimatedOrbitMenu class to create the menu:
       ),
     );
 ```
+
+## Add your custom widget
+
+Now, You can add your custom widget to the list of widgets orbiting around the parent circle. Keep in mind that you should declare the size 
+within the configuration as itemSize to keep the elements in sync with the parent circle. Your widget will be embedded within a 
+parent container.
+
+```dart 
+
+  AnimatedOrbitMenu(
+        animate: true,
+        config: OrbitMenuConfig(
+              animationDuration: Duration(seconds:5),
+              animationType: OrbitMenuAnimationType.rotating,
+              menuPositionX: widthSize / 2,
+              menuPositionY: heightSize / 2,
+              menuColor: Colors.deepPurple,
+              radius: 100,
+              menuItems: itemList,
+              itemSize: 150,
+              titleStyle: TextStyle(color: Colors.white),
+              borderCentralMenuColor: Colors.white,
+              itemOffsetPercentage: 0.5,
+              myWidget: Container(color: Colors.red,)
+        )
+    ),
+  );
+```
+## Example
+
+<div align="center">
+  <div>
+    <b>My Widget Bouncing Animation:</b><br>
+    <img src="https://francodev.live/github/circularmenupackage/personalizado.gif" width="200" />
+  </div>
+  <br>
+</div>
+
 ### Contributions to this package are welcome.
 
 If you find a bug or have a suggestion, please open an issue or a pull request.

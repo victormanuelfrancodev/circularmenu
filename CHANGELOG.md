@@ -29,3 +29,11 @@
 
 * The classes were formatted, and the imports were modified to make it easier for users to import the Flutter package.
 * The README.md file was updated.
+
+## 0.0.8
+
+* Add your custom widget to the list of widgets orbiting around the parent circle.
+
+## 0.0.9
+
+* Readme fixed.
