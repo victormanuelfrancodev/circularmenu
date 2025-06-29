@@ -26,6 +26,7 @@ class OrbitMenu {
         OrbitMenuAnimationType.rotating,
     double itemOffsetPercentage = 0.0,
     Widget? myWidget,
+    bool enableCentralWaveEffect = false,
   }) {
     int numberOfElements = menuItems.length;
     double adjustedRadius = radius * (1 + itemOffsetPercentage);
@@ -33,7 +34,7 @@ class OrbitMenu {
         getCircularPosition(numberOfElements, adjustedRadius, animationOffset);
     List<Widget> menuWidgets = [];
 
-    /// Add the central menu
+    /// Add the central menu with wave effect if enabled
     menuWidgets.add(
       Positioned(
           left: menuPositionX - radius,
@@ -42,6 +43,8 @@ class OrbitMenu {
             size: radius * 2,
             color: menuColor,
             border: borderCentralMenu,
+            enableWaveEffect: enableCentralWaveEffect,
+            animationValue: animationOffset / (2 * pi),
           )),
     );
 

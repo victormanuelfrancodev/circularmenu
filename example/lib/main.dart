@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Scaffold(
+        backgroundColor: Colors.black,
         body: Menu(),
       ),
     );
@@ -48,16 +49,20 @@ class Menu extends StatelessWidget {
     return AnimatedOrbitMenu(
       animate: true,
       config: OrbitMenuConfig(
-          animationDuration: const Duration(seconds: 15),
+          animationDuration: const Duration(seconds: 2),
           animationType: OrbitMenuAnimationType.bouncing,
           menuPositionX: widthSize / 2,
           menuPositionY: heightSize / 2,
-          menuColor: const Color.fromARGB(255, 1, 1, 1),
-          radius: 100,
+          menuColor: Colors.deepPurple,
+          radius: 60,
           menuItems: itemList,
-          itemSize: 100,
-          borderCentralMenu: Border.all(color: Colors.red, width: 5),
-          itemOffsetPercentage: 1,),
+          itemSize: 80,
+          itemColor: Colors.cyan,
+          titleStyle: const TextStyle(color: Colors.white, fontSize: 18),
+          borderCentralMenu: Border.all(color: Colors.cyan, width: 3),
+          itemOffsetPercentage: 1.2,
+          enableCentralWaveEffect: true,
+      ),
     );
   }
 }

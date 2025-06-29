@@ -18,6 +18,7 @@ class OrbitMenuConfig {
   final double itemOffsetPercentage;
   final TextStyle titleStyle;
   final Widget? myWidget;
+  final bool enableCentralWaveEffect;
 
   OrbitMenuConfig({
     this.animationType = OrbitMenuAnimationType.bouncing,
@@ -34,5 +35,6 @@ class OrbitMenuConfig {
     this.itemBorder = const Border(),
     this.itemOffsetPercentage = 0.0,
     this.myWidget,
+    this.enableCentralWaveEffect = false,
   });
 }

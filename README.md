@@ -48,6 +48,7 @@ OrbitMenu is a versatile Flutter package for creating dynamic circular menus wit
 - Complete customization of colors, sizes, and behaviors.
 - Toggle animations with a simple boolean.
 - Add images in the items
+- **NEW**: Central wave effect - The central circle can display animated wave effects while the orbiting items maintain their normal animation.
 - Fixed big details! 🙇🏾
 
 ## Installation
@@ -89,8 +90,20 @@ AnimatedOrbitMenu(
     itemSize: 100,
     borderCentralMenu: Border.all(color: Colors.red, width: 5),
     itemOffsetPercentage: 1,
+    enableCentralWaveEffect: true,
   ),
 );
+```
+
+### Central Wave Effect
+
+The central wave effect creates beautiful animated waves emanating from the center circle while keeping the orbiting items unchanged. This creates a stunning visual effect where the center "breathes" with waves.
+
+```dart
+OrbitMenuConfig(
+  // ... other configuration
+  enableCentralWaveEffect: true,
+)
 ```
 
 ## Add your custom widget

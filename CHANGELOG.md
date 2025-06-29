@@ -55,3 +55,10 @@
 ## 0.0.13
 
 * Update readme
+
+## 0.0.14
+
+* ✨ Added central wave effect - The central circle now displays beautiful animated waves while orbiting items maintain their normal animation
+* ✨ Enhanced BigCircle widget to support wave effects
+* ✨ Added enableCentralWaveEffect configuration option
+* ✨ Updated documentation with wave effect examples

@@ -73,7 +73,8 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu>
                     animationOffset: _animation.value,
                     itemOffsetPercentage: widget.config.itemOffsetPercentage,
                     myWidget: widget.config.myWidget,
-                    orbitMenuAnimationType: widget.config.animationType),
+                    orbitMenuAnimationType: widget.config.animationType,
+                    enableCentralWaveEffect: widget.config.enableCentralWaveEffect),
               );
             },
           )
@@ -92,7 +93,8 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu>
                 borderCentralMenu: widget.config.borderCentralMenu,
                 animationOffset: 0,
                 itemOffsetPercentage: widget.config.itemOffsetPercentage,
-                myWidget: widget.config.myWidget));
+                myWidget: widget.config.myWidget,
+                enableCentralWaveEffect: widget.config.enableCentralWaveEffect));
   }
 
   /// Dispose the controller
