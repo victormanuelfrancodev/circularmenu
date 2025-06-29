@@ -37,3 +37,21 @@
 ## 0.0.9
 
 * Readme fixed.
+
+## 0.0.10
+
+* Add Orbit effect.
+
+## 0.0.11
+
+* Add images support
+* Fixed big details 
+* Fixed items onTap 
+
+## 0.0.12
+
+* Update readme
+
+## 0.0.13
+
+* Update readme

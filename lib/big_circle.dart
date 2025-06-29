@@ -5,14 +5,12 @@ class BigCircle extends StatelessWidget {
   const BigCircle(
       {required this.size,
       required this.color,
-      this.borderColor,
-      this.borderWidth,
+      this.border,
       super.key});
 
   final double size;
   final Color color;
-  final Color? borderColor;
-  final double? borderWidth;
+  final Border? border;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +19,7 @@ class BigCircle extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         color: color,
-        border: Border.all(
-            color: borderColor ?? Colors.transparent, width: borderWidth ?? 0),
+        border: border,
         borderRadius: BorderRadius.circular((size) / 2),
       ),
     );

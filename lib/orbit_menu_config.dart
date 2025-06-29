@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'item.dart';
 import 'orbit_menu_animation_type.dart';
+
 /// Configuration for the orbit menu.
 class OrbitMenuConfig {
   final Duration animationDuration;
@@ -12,8 +13,8 @@ class OrbitMenuConfig {
   final List<Item> menuItems;
   final double itemSize;
   final Color itemColor;
-  final Color itemBorderColor;
-  final Color borderCentralMenuColor;
+  final Border itemBorder;
+  final Border borderCentralMenu;
   final double itemOffsetPercentage;
   final TextStyle titleStyle;
   final Widget? myWidget;
@@ -25,12 +26,12 @@ class OrbitMenuConfig {
     required this.menuPositionY,
     required this.menuColor,
     required this.radius,
-    required this.borderCentralMenuColor,
+    required this.borderCentralMenu,
     required this.menuItems,
-    this.itemSize = 50.0,
+    this.itemSize = 15.0,
     this.itemColor = Colors.red,
     this.titleStyle = const TextStyle(color: Colors.black),
-    this.itemBorderColor = Colors.black,
+    this.itemBorder = const Border(),
     this.itemOffsetPercentage = 0.0,
     this.myWidget,
   });

@@ -40,6 +40,11 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu>
                   parent: _controller, curve: Curves.fastOutSlowIn));
           _controller.repeat(reverse: true);
           break;
+        case OrbitMenuAnimationType.orbit:
+          _animation = Tween<double>(begin: 0.0, end: 2 * pi).animate(
+              CurvedAnimation(parent: _controller, curve: Curves.linear));
+          _controller.repeat();
+          break;
       }
     }
   }
@@ -62,12 +67,13 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu>
                     menuItems: widget.config.menuItems,
                     itemSize: widget.config.itemSize,
                     itemColor: widget.config.itemColor,
-                    itemBorderColor: widget.config.itemBorderColor,
-                    borderCentralMenuColor:
-                        widget.config.borderCentralMenuColor,
+                    border: widget.config.itemBorder,
+                    borderCentralMenu:
+                        widget.config.borderCentralMenu,
                     animationOffset: _animation.value,
                     itemOffsetPercentage: widget.config.itemOffsetPercentage,
-                    myWidget: widget.config.myWidget),
+                    myWidget: widget.config.myWidget,
+                    orbitMenuAnimationType: widget.config.animationType),
               );
             },
           )
@@ -82,8 +88,8 @@ class _AnimatedOrbitMenuState extends State<AnimatedOrbitMenu>
                 menuItems: widget.config.menuItems,
                 itemSize: widget.config.itemSize,
                 itemColor: widget.config.itemColor,
-                itemBorderColor: widget.config.itemBorderColor,
-                borderCentralMenuColor: widget.config.borderCentralMenuColor,
+                border: widget.config.itemBorder,
+                borderCentralMenu: widget.config.borderCentralMenu,
                 animationOffset: 0,
                 itemOffsetPercentage: widget.config.itemOffsetPercentage,
                 myWidget: widget.config.myWidget));

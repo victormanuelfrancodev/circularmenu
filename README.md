@@ -4,7 +4,6 @@
 
 OrbitMenu is a versatile Flutter package for creating dynamic circular menus with interactive animations. It now features new animation styles - bouncing and rotating, enhancing user engagement.
 
-
 ### You can achieve with this package :
 
 <div align="center">
@@ -24,12 +23,17 @@ OrbitMenu is a versatile Flutter package for creating dynamic circular menus wit
 <div align="center">
   <div>
     <b>Bouncing Animation:</b><br>
-    <img src="https://francodev.live/github/circularmenupackage/bouncingg.gif" width="200" />
+    <img src="https://francodev.live/github/circularmenupackage/3.gif" width="200" />
   </div>
   <br>
   <div>
     <b>Rotating Animation:</b><br>
-    <img src="https://francodev.live/github/circularmenupackage/girando.gif" width="200" />
+    <img src="https://francodev.live/github/circularmenupackage/2.gif" width="200" />
+  </div>
+  <br>
+  <div>
+    <b>Orbit Animation:</b><br>
+    <img src="https://francodev.live/github/circularmenupackage/1.gif" width="200" />
   </div>
 </div>
 
@@ -40,10 +44,11 @@ OrbitMenu is a versatile Flutter package for creating dynamic circular menus wit
 - Full customization of colors, sizes, and behaviors.
 - Ability to adjust the distance of the smaller circles from the central circle.
 - Central circle with customizable circular buttons.
-- Two animation styles: bouncing and rotating.
+- Three animation styles: bouncing, rotating, orbit.
 - Complete customization of colors, sizes, and behaviors.
 - Toggle animations with a simple boolean.
-
+- Add images in the items
+- Fixed big details! 🙇🏾
 
 ## Installation
 
@@ -55,7 +60,6 @@ dependencies:
 ```
 
 Then, run flutter pub get to install the package.
-
 
 ## Usage
 
@@ -71,26 +75,22 @@ import 'package:orbitmenu/orbit_menu_animation_type.dart';
 
 Use the AnimatedOrbitMenu class to create the menu:
 
-```dart 
-
-    AnimatedOrbitMenu(
-      animate: true,
-      config: OrbitMenuConfig(
-      animationDuration: Duration(seconds:5),
-      animationType: OrbitMenuAnimationType.rotating,
-      menuPositionX: widthSize / 2,
-      menuPositionY: heightSize / 2,
-      menuColor: Colors.deepPurple,
-      radius: 100,
-      menuItems: itemList,
-      titleStyle: TextStyle(color: Colors.white),
-      itemSize: 50,
-      itemColor: Colors.deepPurple,
-      itemBorderColor: Colors.white,
-      borderCentralMenuColor: Colors.white,
-      itemOffsetPercentage: 0.5,
-      ),
-    );
+```dart
+AnimatedOrbitMenu(
+  animate: true,
+  config: OrbitMenuConfig(
+    animationDuration: const Duration(seconds: 15),
+    animationType: OrbitMenuAnimationType.bouncing,
+    menuPositionX: widthSize / 2,
+    menuPositionY: heightSize / 2,
+    menuColor: const Color.fromARGB(255, 1, 1, 1),
+    radius: 100,
+    menuItems: itemList,
+    itemSize: 100,
+    borderCentralMenu: Border.all(color: Colors.red, width: 5),
+    itemOffsetPercentage: 1,
+  ),
+);
 ```
 
 ## Add your custom widget
@@ -99,27 +99,25 @@ Now, You can add your custom widget to the list of widgets orbiting around the p
 within the configuration as itemSize to keep the elements in sync with the parent circle. Your widget will be embedded within a
 parent container.
 
-```dart 
-
-  AnimatedOrbitMenu(
-        animate: true,
-        config: OrbitMenuConfig(
-              animationDuration: Duration(seconds:5),
-              animationType: OrbitMenuAnimationType.rotating,
-              menuPositionX: widthSize / 2,
-              menuPositionY: heightSize / 2,
-              menuColor: Colors.deepPurple,
-              radius: 100,
-              menuItems: itemList,
-              itemSize: 150,
-              titleStyle: TextStyle(color: Colors.white),
-              borderCentralMenuColor: Colors.white,
-              itemOffsetPercentage: 0.5,
-              myWidget: Container(color: Colors.red,)
-        )
-    ),
-  );
+```dart
+AnimatedOrbitMenu(
+  animate: true,
+  config: OrbitMenuConfig(
+    animationDuration: Duration(seconds: 5),
+    animationType: OrbitMenuAnimationType.rotating,
+    menuPositionX: widthSize / 2,
+    menuPositionY: heightSize / 2,
+    menuColor: Colors.deepPurple,
+    radius: 100,
+    menuItems: itemList,
+    itemSize: 150,
+    titleStyle: TextStyle(color: Colors.white),
+    itemOffsetPercentage: 0.5,
+    myWidget: Container(color: Colors.red,)
+  )
+),
 ```
+
 ## Example
 
 <div align="center">

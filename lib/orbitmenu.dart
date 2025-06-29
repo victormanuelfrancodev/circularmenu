@@ -6,6 +6,7 @@ import 'package:orbitmenu/big_circle.dart';
 import 'package:orbitmenu/circle_item.dart';
 import 'package:orbitmenu/item.dart';
 import 'package:orbitmenu/maths.dart';
+import 'package:orbitmenu/orbit_menu_animation_type.dart';
 
 /// A class to create a circular menu.
 class OrbitMenu {
@@ -18,9 +19,11 @@ class OrbitMenu {
     required double itemSize,
     required Color itemColor,
     required TextStyle titleStyle,
-    required Color itemBorderColor,
-    required Color borderCentralMenuColor,
+    required Border border,
+    required Border borderCentralMenu,
     required double animationOffset,
+    OrbitMenuAnimationType orbitMenuAnimationType =
+        OrbitMenuAnimationType.rotating,
     double itemOffsetPercentage = 0.0,
     Widget? myWidget,
   }) {
@@ -29,7 +32,8 @@ class OrbitMenu {
     List<Point> points =
         getCircularPosition(numberOfElements, adjustedRadius, animationOffset);
     List<Widget> menuWidgets = [];
-/// Add the central menu
+
+    /// Add the central menu
     menuWidgets.add(
       Positioned(
           left: menuPositionX - radius,
@@ -37,32 +41,82 @@ class OrbitMenu {
           child: BigCircle(
             size: radius * 2,
             color: menuColor,
-            borderWidth: 1,
-            borderColor: borderCentralMenuColor,
+            border: borderCentralMenu,
           )),
     );
-/// Add the items
-    for (int i = 0; i < numberOfElements; i++) {
-      menuWidgets.add(
-        Positioned(
-            left: menuPositionX + points[i].x - (itemSize / 2),
-            top: menuPositionY + points[i].y - (itemSize / 2),
-            child: myWidget != null
-                ? Container(
-                    width: itemSize,
-                    height: itemSize,
-                    child: myWidget,
-                  )
-                : CircleItem(
-                    size: itemSize,
-                    color: itemColor,
-                    titleStyle: titleStyle,
-                    borderColor: itemBorderColor,
-                    borderWidth: 1,
-                    title: menuItems[i].title,
-                    onTap: menuItems[i].onPressed,
-                  )),
-      );
+
+    /// Add the items
+    switch (orbitMenuAnimationType) {
+      case OrbitMenuAnimationType.orbit:
+        for (int i = 0; i < numberOfElements; i++) {
+          double waveOffset =
+              sin(animationOffset + (i / numberOfElements) * 2 * pi) * 100;
+          menuWidgets.add(
+            Positioned(
+                left: menuPositionX + points[i].x - (itemSize / 2) + waveOffset,
+                top: menuPositionY + points[i].y - (itemSize / 2) + waveOffset,
+                child: myWidget != null
+                    ? GestureDetector(
+                      onTap: menuItems[i].onPressed,
+                      child: SizedBox(
+                          width: itemSize,
+                          height: itemSize,
+                          child: myWidget,
+                        ),
+                    )
+                    : menuItems[i].image.isNotEmpty ? GestureDetector(
+                      onTap: menuItems[i].onPressed,
+                      child: SizedBox(
+                        width: itemSize,
+                        height: itemSize,
+                        child: Image(image: AssetImage(menuItems[i].image),),
+                      ),
+                    ):CircleItem(
+                        size: itemSize,
+                        color: itemColor,
+                        titleStyle: titleStyle,
+                        border: border,
+                        borderWidth: 1,
+                        title: menuItems[i].title,
+                        onTap: menuItems[i].onPressed,
+                      )),
+          );
+        }
+        break;
+      default:
+        for (int i = 0; i < numberOfElements; i++) {
+          menuWidgets.add(
+            Positioned(
+                left: menuPositionX + points[i].x - (itemSize / 2),
+                top: menuPositionY + points[i].y - (itemSize / 2),
+                child: myWidget != null
+                    ? GestureDetector(
+                      onTap: menuItems[i].onPressed,
+                      child: SizedBox(
+                          width: itemSize,
+                          height: itemSize,
+                          child: myWidget,
+                        ),
+                    )
+                    : menuItems[i].image.isNotEmpty ? GestureDetector(
+                      onTap: menuItems[i].onPressed,
+                      child: SizedBox(
+                        width: itemSize,
+                        height: itemSize,
+                        child: Image(image: AssetImage(menuItems[i].image),),
+                      ),
+                    ): CircleItem(
+                        size: itemSize,
+                        color: itemColor,
+                        titleStyle: titleStyle,
+                        border: border,
+                        borderWidth: 1,
+                        title: menuItems[i].title,
+                        onTap: menuItems[i].onPressed,
+                      )),
+          );
+        }
+        break;
     }
     return menuWidgets;
   }
